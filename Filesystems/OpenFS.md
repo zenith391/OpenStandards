@@ -1,10 +1,10 @@
 # File storage
 
-Boot sectors, RAID arrays, and partition tables were all discussed in the last
+Boot sectors, RAID arrays, and partition tables were all discussed in OpenUPT.md.
 
 ## Storing files
 
-The nethod in which OpenFS stores files borrows from the UNIX implementation.
+The method in which OpenFS stores files borrows from the UNIX implementation.
 
 File index nodes (inodes) are stored in the beginning one percent of sectors of every partition. Each inode contains the corresponding file's starting sector, ending sector, and type (`0` or `1` for file or directory, respectively). Each of the inode sectors can allocate 32 files, equating to 2560 total allocable files on a 4-megabyte partition.
 
