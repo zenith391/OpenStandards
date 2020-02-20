@@ -1,6 +1,6 @@
 # OpenUPT
 
-OpenUPT is a format that allows for partitioning and booting of unmanaged disks.
+Open Unpanaged Partition Table is a format that allows for partitioning and booting of unmanaged disks.
 
 ## Sector Layout
 
