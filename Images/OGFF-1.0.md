@@ -17,7 +17,7 @@ increasing order dependending on entry ID of Image Data entries.
 
 ## Header
 ```
-<Signature> - ASCII "OGFIMAG" followed by ASCII End Of Text (ETX, byte equals to 3)
+<Signature> - ASCII "OGFIMAGE" followed by ASCII End Of Text (ETX, byte equals to 3)
 <Version> - Unsigned byte (currently equals to 1)
 <Flags> - Byte, see above
 <Entries Length> - Unsigned byte (0-255)
