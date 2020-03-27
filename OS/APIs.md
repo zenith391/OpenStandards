@@ -23,6 +23,9 @@ OSes should implement at least the following subset of the `package` library:
 - `package.searchpath(name: string, path: string[, sep: string[, rep: string]]): string or boolean, error`
   Searches the provided path for `name`, replacing all instances of `sep` with `rep`. `sep` defaults to `.`, and `rep` to `/`.
 
+- optional: `package.libdir: string`
+  The directory user-provided libraries should be placed into. Useful in the absence of `/lib` or `/usr/lib`.
+
 - `require(modname: string): table`
   Searches the package path for a module. Throws an error if the module is not found, or returns the API if it is.
 
@@ -47,3 +50,21 @@ An OS' `term` API should provide at a minimum the following:
 
 - `term.read([history: table[, replace: string[, default: string]]])`
   Reads text input from the user.
+
+### components
+
+OSes must provide an interface to components. At least the following must be implemented:
+
+- `component.list([type: string[, exact: boolean]]): iterator`
+  Returns an iterator over all installed components in the computer. `type` and `exact` do what they say on the tin.
+
+- `component.isAvailable(type: string): boolean`
+  Queries if the selected component, or optionally an interface to it, is available.
+
+- `component.[component_name]`
+  Is a proxy to the specified component, if it is available.
+
+- `component.get(address: string): string or nil`
+  Attempts to resolve the provided address to a full component address.
+
+The component API may (as in the case of Photon, or possibly Fuchas) be a wrapper over drivers.
